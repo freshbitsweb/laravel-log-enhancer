@@ -2,6 +2,8 @@
 
 namespace Freshbitsweb\LaravelLogEnhancer;
 
+use Illuminate\Support\ServiceProvider;
+
 class LaravelLogEnhancerServiceProvider extends ServiceProvider
 {
     /**

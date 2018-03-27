@@ -16,7 +16,6 @@ class LogEnhancer
      */
     public function __invoke($logger)
     {
-        dd('a');
         foreach ($logger->getHandlers() as $handler) {
             if (config('laravel_log_enhancer.log_request_details')) {
                 $handler->pushProcessor(new WebProcessor);
