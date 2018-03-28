@@ -4,6 +4,8 @@ Laravel's logging system helps a lot for storing data as well as while troublesh
 Sometimes, we need more than just *stack trace* to debug the issue easily. The things like **request URL**, **request input data**, **session data**, etc. help us hunt down the exact cause quickly. That's what this *plug-and-play* Laravel package does for you :)
 
 
+**Note**: For Laravel 5.5, you may use [Slack Error Notifier](https://github.com/freshbitsweb/slack-error-notifier) package.
+
 ## Requirements
 
 * PHP 7.1.3+
