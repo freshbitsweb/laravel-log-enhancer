@@ -7,10 +7,10 @@ use Illuminate\Support\ServiceProvider;
 class LaravelLogEnhancerServiceProvider extends ServiceProvider
 {
     /**
-    * Publishes configuration file
-    *
-    * @return void
-    */
+     * Publishes configuration file.
+     *
+     * @return void
+     */
     public function boot()
     {
         $this->publishes([
@@ -19,10 +19,10 @@ class LaravelLogEnhancerServiceProvider extends ServiceProvider
     }
 
     /**
-    * Make config publishment optional by merge the config from the package
-    *
-    * @return void
-    */
+     * Make config publishment optional by merge the config from the package.
+     *
+     * @return void
+     */
     public function register()
     {
         $this->mergeConfigFrom(
