@@ -5,7 +5,7 @@ namespace Freshbitsweb\LaravelLogEnhancer;
 class RequestDataProcessor
 {
     /**
-     * Adds additional request data to the log message
+     * Adds additional request data to the log message.
      */
     public function __invoke($record)
     {
