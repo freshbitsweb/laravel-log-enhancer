@@ -3,6 +3,10 @@
 namespace Freshbitsweb\LaravelLogEnhancer\Test;
 
 use Illuminate\Log\Logger;
+use Monolog\Processor\GitProcessor;
+use Monolog\Processor\WebProcessor;
+use Monolog\Processor\MemoryUsageProcessor;
+use Freshbitsweb\LaravelLogEnhancer\RequestDataProcessor;
 
 class LogEnhancerTest extends TestCase
 {
@@ -11,12 +15,21 @@ class LogEnhancerTest extends TestCase
     {
         $logger = $this->app[Logger::class];
 
-        $logger->info('hey');
-
         $handlers = $logger->getHandlers();
         foreach ($handlers as $handler) {
-            // Currently, Laravel does not provide access to underlying monolog instance
-            // So, we cannot assert whether the processors are added by the package
+            if (config('laravel_log_enhancer.log_git_data')) {
+                $this->assertInstanceOf(GitProcessor::class, $handler->popProcessor());
+            }
+
+            if (config('laravel_log_enhancer.log_memory_usage')) {
+                $this->assertInstanceOf(MemoryUsageProcessor::class, $handler->popProcessor());
+            }
+
+            $this->assertInstanceOf(RequestDataProcessor::class, $handler->popProcessor());
+
+            if (config('laravel_log_enhancer.log_request_details')) {
+                $this->assertInstanceOf(WebProcessor::class, $handler->popProcessor());
+            }
         }
     }
 }
