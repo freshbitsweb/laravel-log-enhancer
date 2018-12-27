@@ -2,7 +2,7 @@
 [![Total Downloads](https://poser.pugx.org/freshbitsweb/laravel-log-enhancer/downloads)](https://packagist.org/packages/freshbitsweb/laravel-log-enhancer)
 [![License](https://poser.pugx.org/freshbitsweb/laravel-log-enhancer/license)](https://packagist.org/packages/freshbitsweb/laravel-log-enhancer)
 [![StyleCI](https://styleci.io/repos/126970369/shield?branch=master)](https://styleci.io/repos/126970369)
-[![Build Status](https://travis-ci.com/freshbitsweb/laravel-log-enhancer.svg?branch=master)](https://travis-ci.com/freshbitsweb/laravel-log-enhancer)
+[![Build Status](https://travis-ci.org/freshbitsweb/laravel-log-enhancer.svg?branch=master)](https://travis-ci.org/freshbitsweb/laravel-log-enhancer)
 
 # Laravel Log Enhancer (Laravel 5.6+)
 Laravel's logging system helps a lot for storing data as well as while troubleshooting some hidden bugs. The data related to the exception automatically gets logged whenever something goes wrong.
