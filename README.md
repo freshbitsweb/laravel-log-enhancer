@@ -4,18 +4,20 @@
 [![StyleCI](https://styleci.io/repos/126970369/shield?branch=master)](https://styleci.io/repos/126970369)
 [![Build Status](https://travis-ci.org/freshbitsweb/laravel-log-enhancer.svg?branch=master)](https://travis-ci.org/freshbitsweb/laravel-log-enhancer)
 
-# Laravel Log Enhancer (Laravel 5.6 to Laravel 5.8)
+# Laravel Log Enhancer (Laravel 5.6 to Laravel 6.0)
 Laravel's logging system helps a lot for storing data as well as while troubleshooting some hidden bugs. The data related to the exception automatically gets logged whenever something goes wrong.
 
 Sometimes, we need more than just *stack trace* to debug the issue easily. The things like **request URL**, **request input data**, **session data**, etc. help us hunt down the exact cause quickly. That's what this *plug-and-play* Laravel package does for you :)
 
-
-**Note**: For Laravel 5.5, you may use [Slack Error Notifier](https://github.com/freshbitsweb/slack-error-notifier) package.
-
 ## Requirements
 
-* PHP 7.1.3+
+* PHP 7.2+
 * Laravel 5.6+
+
+**Notes**:
+- If you are still using PHP 7.1 and Laravel 5.\*, you may use v1.0.* of this package.
+
+- For Laravel 5.5, you may use [Slack Error Notifier](https://github.com/freshbitsweb/slack-error-notifier) package.
 
 ## Installation
 
