@@ -3,8 +3,8 @@
 namespace Freshbitsweb\LaravelLogEnhancer;
 
 use Monolog\Processor\GitProcessor;
-use Monolog\Processor\WebProcessor;
 use Monolog\Processor\MemoryUsageProcessor;
+use Monolog\Processor\WebProcessor;
 
 class LogEnhancer
 {
