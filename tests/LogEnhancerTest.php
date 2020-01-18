@@ -2,11 +2,11 @@
 
 namespace Freshbitsweb\LaravelLogEnhancer\Test;
 
+use Freshbitsweb\LaravelLogEnhancer\RequestDataProcessor;
 use Illuminate\Log\Logger;
 use Monolog\Processor\GitProcessor;
-use Monolog\Processor\WebProcessor;
 use Monolog\Processor\MemoryUsageProcessor;
-use Freshbitsweb\LaravelLogEnhancer\RequestDataProcessor;
+use Monolog\Processor\WebProcessor;
 
 class LogEnhancerTest extends TestCase
 {
