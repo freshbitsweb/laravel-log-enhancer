@@ -56,6 +56,11 @@ It has following configuration settings:
 
 * (array) ignore_input_fields => If input data is being sent, you can specify the inputs from the user that should not be logged. for example, password,cc number, etc.
 
+## Lumen compatibility
+
+We do not use Lumen in any of our projects. And this package is not tested with Lumen framework.
+If you are [willing](https://github.com/freshbitsweb/laravel-log-enhancer/issues/15) [to](https://github.com/freshbitsweb/laravel-log-enhancer/issues/16) use this package with Lumen, please help us by testing and making a PR to make it work. Thanks.
+
 ## Authors
 
 * [**Gaurav Makhecha**](https://github.com/gauravmak) - *Initial work*
