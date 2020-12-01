@@ -2,7 +2,7 @@
     "name": "freshbitsweb/laravel-log-enhancer",
     "description": "Make debugging easier by adding more data to your laravel logs",
     "require": {
-        "php": "^7.3",
+        "php": "^7.3|^8.0",
         "illuminate/support": "5.6.*|5.7.*|5.8.*|^6.0|^7.0|^8.0",
         "monolog/monolog": "^1.23|^2.1.1"
     },
