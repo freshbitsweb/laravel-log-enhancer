@@ -4,7 +4,7 @@
 [![StyleCI](https://styleci.io/repos/126970369/shield?branch=master)](https://styleci.io/repos/126970369)
 [![Buy us a tree](https://img.shields.io/badge/Buy%20me%20a%20tree-%F0%9F%8C%B3-lightgreen?style=flat-square)](https://plant.treeware.earth/freshbitsweb/laravel-log-enhancer)
 
-# Laravel Log Enhancer (Laravel 5.6 to Laravel 8.x)
+# Laravel Log Enhancer (Laravel 5.6 to Laravel 9.x)
 Laravel's logging system helps a lot for storing data as well as while troubleshooting some hidden bugs. The data related to the exception automatically gets logged whenever something goes wrong.
 
 Sometimes, we need more than just *stack trace* to debug the issue easily. The things like **request URL**, **request input data**, **session data**, etc. help us hunt down the exact cause quickly. That's what this *plug-and-play* Laravel package does for you :)
@@ -12,6 +12,7 @@ Sometimes, we need more than just *stack trace* to debug the issue easily. The t
 ## Requirements
 | PHP    | Laravel | Package |
 |--------|---------|---------|
+| 8.0+   | 9.x     | v1.4.0  |
 | 7.3+   | 8.x     | v1.3.0  |
 | 7.2.5+ | 7.x     | v1.2.0  |
 | <7.2.5 | 6.x     | v1.1.0  |
