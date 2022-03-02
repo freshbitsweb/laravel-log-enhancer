@@ -12,6 +12,7 @@ Sometimes, we need more than just *stack trace* to debug the issue easily. The t
 ## Requirements
 | PHP    | Laravel | Package |
 |--------|---------|---------|
+| 8.0+   | 9.x     | v1.5.0  |
 | 8.0+   | 9.x     | v1.4.0  |
 | 7.3+   | 8.x     | v1.3.0  |
 | 7.2.5+ | 7.x     | v1.2.0  |
