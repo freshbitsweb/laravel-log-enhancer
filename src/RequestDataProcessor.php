@@ -41,7 +41,7 @@ class RequestDataProcessor
     {
         $gitDetails = [];
         $lastCommitDetails = `git show -s --format=%B`;
-        $gitDetails['Last Commit Message'] = preg_filter("/(.*?)\n*/s", "\\1", $lastCommitDetails);
+        $gitDetails['Last Commit Message'] = preg_filter("/(.*?)\n*/s", '\\1', $lastCommitDetails);
 
         $currentHeadDetails = `git branch -v --no-abbrev`;
         if (
