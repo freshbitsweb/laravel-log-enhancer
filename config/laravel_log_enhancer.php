@@ -13,6 +13,8 @@ return [
 
     'log_git_data' => false,
 
+    'log_app_details' => false,
+
     // You can specify the inputs from the user that should not be logged
     'ignore_input_fields' => ['password', 'confirm_password', 'password_confirmation'],
 ];
