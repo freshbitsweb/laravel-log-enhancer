@@ -4,13 +4,14 @@ namespace Freshbitsweb\LaravelLogEnhancer\Test;
 
 use Freshbitsweb\LaravelLogEnhancer\RequestDataProcessor;
 use Illuminate\Log\Logger;
+use LogicException;
 use Monolog\Processor\MemoryUsageProcessor;
 use Monolog\Processor\WebProcessor;
 
 class LogEnhancerTest extends TestCase
 {
     /** @test */
-    public function it_adds_request_details_to_logs()
+    public function it_adds_all_processor_details_to_the_logs()
     {
         config(['laravel_log_enhancer.log_memory_usage' => true]);
         config(['laravel_log_enhancer.log_request_details' => true]);
@@ -27,6 +28,40 @@ class LogEnhancerTest extends TestCase
             if (config('laravel_log_enhancer.log_request_details')) {
                 $this->assertInstanceOf(WebProcessor::class, $handler->popProcessor());
             }
+        }
+    }
+
+    /** @test */
+    public function it_will_not_adds_request_details_to_logs()
+    {
+        config(['laravel_log_enhancer.log_memory_usage' => true]);
+        config(['laravel_log_enhancer.log_request_details' => false]);
+        $logger = $this->app[Logger::class];
+
+        $handlers = $logger->getHandlers();
+        foreach ($handlers as $handler) {
+            $this->assertInstanceOf(RequestDataProcessor::class, $handler->popProcessor());
+            $this->assertInstanceOf(MemoryUsageProcessor::class, $handler->popProcessor());
+
+            $this->expectException(LogicException::class);
+            $handler->popProcessor();
+        }
+    }
+
+    /** @test */
+    public function it_will_not_adds_memory_usage_details_to_logs()
+    {
+        config(['laravel_log_enhancer.log_memory_usage' => false]);
+        config(['laravel_log_enhancer.log_request_details' => true]);
+        $logger = $this->app[Logger::class];
+
+        $handlers = $logger->getHandlers();
+        foreach ($handlers as $handler) {
+            $this->assertInstanceOf(RequestDataProcessor::class, $handler->popProcessor());
+            $this->assertInstanceOf(WebProcessor::class, $handler->popProcessor());
+
+            $this->expectException(LogicException::class);
+            $handler->popProcessor();
         }
     }
 
