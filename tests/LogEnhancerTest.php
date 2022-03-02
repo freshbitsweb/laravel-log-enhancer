@@ -4,7 +4,6 @@ namespace Freshbitsweb\LaravelLogEnhancer\Test;
 
 use Freshbitsweb\LaravelLogEnhancer\RequestDataProcessor;
 use Illuminate\Log\Logger;
-use Monolog\Processor\GitProcessor;
 use Monolog\Processor\MemoryUsageProcessor;
 use Monolog\Processor\WebProcessor;
 
@@ -13,19 +12,17 @@ class LogEnhancerTest extends TestCase
     /** @test */
     public function it_adds_request_details_to_logs()
     {
+        config(['laravel_log_enhancer.log_memory_usage' => true]);
+        config(['laravel_log_enhancer.log_request_details' => true]);
         $logger = $this->app[Logger::class];
 
         $handlers = $logger->getHandlers();
         foreach ($handlers as $handler) {
-            if (config('laravel_log_enhancer.log_git_data')) {
-                $this->assertInstanceOf(GitProcessor::class, $handler->popProcessor());
-            }
+            $this->assertInstanceOf(RequestDataProcessor::class, $handler->popProcessor());
 
             if (config('laravel_log_enhancer.log_memory_usage')) {
                 $this->assertInstanceOf(MemoryUsageProcessor::class, $handler->popProcessor());
             }
-
-            $this->assertInstanceOf(RequestDataProcessor::class, $handler->popProcessor());
 
             if (config('laravel_log_enhancer.log_request_details')) {
                 $this->assertInstanceOf(WebProcessor::class, $handler->popProcessor());
@@ -67,6 +64,18 @@ class LogEnhancerTest extends TestCase
             $this->assertArrayHasKey('session', $record['extra']);
         } else {
             $this->assertArrayNotHasKey('session', $record['extra']);
+        }
+
+        if (config('laravel_log_enhancer.log_git_data')) {
+            $this->assertArrayHasKey('git', $record['extra']);
+        } else {
+            $this->assertArrayNotHasKey('git', $record['extra']);
+        }
+
+        if (config('laravel_log_enhancer.log_app_details')) {
+            $this->assertArrayHasKey('Application Details', $record['extra']);
+        } else {
+            $this->assertArrayNotHasKey('Application Details', $record['extra']);
         }
     }
 }
