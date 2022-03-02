@@ -11,7 +11,7 @@ use Monolog\Processor\WebProcessor;
 class LogEnhancerTest extends TestCase
 {
     /** @test */
-    public function it_adds_all_processor_details_to_the_logs()
+    public function it_adds_respective_processors_to_the_log_handler()
     {
         config(['laravel_log_enhancer.log_memory_usage' => true]);
         config(['laravel_log_enhancer.log_request_details' => true]);
@@ -26,7 +26,7 @@ class LogEnhancerTest extends TestCase
     }
 
     /** @test */
-    public function it_will_not_add_any_processor_to_the_logs()
+    public function it_does_not_add_processors_to_the_log_handler_when_not_configured()
     {
         config(['laravel_log_enhancer.log_memory_usage' => false]);
         config(['laravel_log_enhancer.log_request_details' => false]);
@@ -42,7 +42,7 @@ class LogEnhancerTest extends TestCase
     }
 
     /** @test */
-    public function it_skips_input_details_as_per_the_configuration()
+    public function it_does_not_add_extra_input_details_to_logs()
     {
         $record = [];
 
@@ -55,7 +55,7 @@ class LogEnhancerTest extends TestCase
     }
 
     /** @test */
-    public function it_adds_other_details_as_per_the_configuration()
+    public function it_adds_other_details_to_the_logs_as_per_the_configuration()
     {
         $record = [];
 
@@ -77,7 +77,7 @@ class LogEnhancerTest extends TestCase
     }
 
     /** @test */
-    public function it_will_not_add_other_details_as_per_the_configuration()
+    public function it_does_not_add_other_details_to_the_logs_as_per_the_configuration()
     {
         $record = [];
 
