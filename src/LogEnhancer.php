@@ -2,7 +2,6 @@
 
 namespace Freshbitsweb\LaravelLogEnhancer;
 
-use Monolog\Processor\GitProcessor;
 use Monolog\Processor\MemoryUsageProcessor;
 use Monolog\Processor\WebProcessor;
 
@@ -21,15 +20,11 @@ class LogEnhancer
                 $handler->pushProcessor(new WebProcessor);
             }
 
-            $handler->pushProcessor(new RequestDataProcessor);
-
             if (config('laravel_log_enhancer.log_memory_usage')) {
                 $handler->pushProcessor(new MemoryUsageProcessor);
             }
 
-            if (config('laravel_log_enhancer.log_git_data')) {
-                $handler->pushProcessor(new GitProcessor);
-            }
+            $handler->pushProcessor(new RequestDataProcessor);
         }
     }
 }
