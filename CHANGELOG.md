@@ -6,7 +6,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.5.0] - 2022-03-02
 ### Added
-- Remove GitProcessor
 - Add More details on Git
 - Add New Application Details
 
