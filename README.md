@@ -53,7 +53,9 @@ It has following configuration settings:
 
 * (bool) log_memory_usage => Set to *true* if you wish to log memory usage [Reference](https://github.com/Seldaek/monolog/blob/master/src/Monolog/Processor/MemoryUsageProcessor.php)
 
-* (bool) log_git_data => Set to *true* if you wish to log git branch and commit details [Reference](https://github.com/Seldaek/monolog/blob/master/src/Monolog/Processor/GitProcessor.php)
+* (bool) log_git_data => Set to *true* if you wish to log git branch name, last commit message, last commit id, staged or (un)staged changes.
+
+* (bool) log_app_details => Set to *true* if you wish to log application data. It will include Laravel Version, PHP Version, Config Cached and Route Cached details.
 
 * (array) ignore_input_fields => If input data is being sent, you can specify the inputs from the user that should not be logged. for example, password,cc number, etc.
 
