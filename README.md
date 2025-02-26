@@ -4,7 +4,7 @@
 [![StyleCI](https://styleci.io/repos/126970369/shield?branch=master)](https://styleci.io/repos/126970369)
 [![Buy us a tree](https://img.shields.io/badge/Buy%20me%20a%20tree-%F0%9F%8C%B3-lightgreen?style=flat-square)](https://plant.treeware.earth/freshbitsweb/laravel-log-enhancer)
 
-# Laravel Log Enhancer (Laravel 5.6 to Laravel 11.x)
+# Laravel Log Enhancer (Laravel 5.6 to Laravel 12.x)
 Laravel logs help all of us debug issues. We value them the most in production. But, the contextual data of the request is not logged by default. We need more than just *stack trace* to debug the issue easily. The things like **request URL**, **request input data**, **session data**, etc. help us hunt down the exact cause quickly. That's what this *plug-and-play* Laravel package does for you :)
 
 ## Before
@@ -16,6 +16,7 @@ Laravel logs help all of us debug issues. We value them the most in production. 
 ## Requirements
 | PHP    | Laravel | Package |
 |--------|---------|---------|
+| 8.2+   | 12.x    | v2.0.0  |
 | 8.2+   | 11.x    | v1.7.0  |
 | 8.1+   | 10.x    | v1.6.0  |
 | 8.0+   | 9.x     | v1.5.0  |
